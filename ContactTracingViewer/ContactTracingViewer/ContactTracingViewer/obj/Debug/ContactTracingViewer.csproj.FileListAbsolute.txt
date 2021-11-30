@@ -1,0 +1,10 @@
+C:\Users\franc\source\repos\Assign#7ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\bin\Debug\ContactTracingViewer.exe.config
+C:\Users\franc\source\repos\Assign#7ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\bin\Debug\ContactTracingViewer.exe
+C:\Users\franc\source\repos\Assign#7ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\bin\Debug\ContactTracingViewer.pdb
+C:\Users\franc\source\repos\Assign#7ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\obj\Debug\ContactTracingViewer.csproj.AssemblyReference.cache
+C:\Users\franc\source\repos\Assign#7ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\obj\Debug\ContactTracingViewer.Form1.resources
+C:\Users\franc\source\repos\Assign#7ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\obj\Debug\ContactTracingViewer.Properties.Resources.resources
+C:\Users\franc\source\repos\Assign#7ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\obj\Debug\ContactTracingViewer.csproj.GenerateResource.cache
+C:\Users\franc\source\repos\Assign#7ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\obj\Debug\ContactTracingViewer.csproj.CoreCompileInputs.cache
+C:\Users\franc\source\repos\Assign#7ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\obj\Debug\ContactTracingViewer.exe
+C:\Users\franc\source\repos\Assign#7ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\ContactTracingViewer\obj\Debug\ContactTracingViewer.pdb
