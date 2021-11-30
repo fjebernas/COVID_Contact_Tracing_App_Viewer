@@ -27,19 +27,19 @@ namespace ContactTracingViewer
             foreach (string file in files)
             {
                 string filename = Path.GetFileName(file);
+                filename = filename.Replace(".txt", "");
                 listBox.Items.Add(filename);
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnViewData_Click(object sender, EventArgs e)
         {
-            string filePath = @"C:\Users\franc\source\repos\Assign#6ContactTracer\ContactTracingApp\ContactTracingApp\Properties\Contact-Tracing-Records\" + listBox.Text;
+            string filePath = @"C:\Users\franc\source\repos\Assign#6ContactTracer\ContactTracingApp\ContactTracingApp\Properties\Contact-Tracing-Records\" + listBox.Text + ".txt";
 
             List<string> lines = new List<string>();
             lines = File.ReadAllLines(filePath).ToList();
 
-            MessageBox.Show(ListToString(lines));
-            
+            MessageBox.Show(ListToString(lines), listBox.Text);
         }
 
         private string ListToString(List<string> lines)
@@ -48,7 +48,7 @@ namespace ContactTracingViewer
 
             foreach (string line in lines)
             {
-                x = x + line;
+                x = x + line + "\n";
             }
 
             return x;
