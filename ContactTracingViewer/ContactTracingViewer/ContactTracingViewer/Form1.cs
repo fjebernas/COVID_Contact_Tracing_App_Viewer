@@ -57,6 +57,7 @@ namespace ContactTracingViewer
         {
             string keyWord = txtBxSearch.Text;
             List<string> listOfNames = new List<string>();
+            
 
             foreach (string file in files)
             {
@@ -65,15 +66,27 @@ namespace ContactTracingViewer
                 listOfNames.Add(filename);
             }
 
-            String[] stringOfNames = listOfNames.ToArray();
+            String[] arrayOfNames = listOfNames.ToArray();
 
-            int pos = Array.IndexOf(stringOfNames, keyWord);
+            /*int pos = Array.IndexOf(arrayOfNames, keyWord);
 
             if (pos > -1)
             {
-                listBox.Text = stringOfNames[pos];
+                listBox.Text = arrayOfNames[pos];
             }
             else
+            {
+                MessageBox.Show("Name not found", "Notification");
+            }*/
+
+            foreach (string x in arrayOfNames)
+            {
+                if ((x.ToLower()).Contains(keyWord.ToLower())) {
+                    listBox.Text = x;
+                }
+            }
+
+            if (!((listBox.Text).ToLower()).Contains(keyWord.ToLower()))
             {
                 MessageBox.Show("Name not found", "Notification");
             }
