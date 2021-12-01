@@ -33,6 +33,10 @@ namespace ContactTracingViewer
             this.btnViewData = new System.Windows.Forms.Button();
             this.labelTitle1 = new System.Windows.Forms.Label();
             this.labelTitle2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBxSearch = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox
@@ -40,16 +44,16 @@ namespace ContactTracingViewer
             this.listBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox.FormattingEnabled = true;
             this.listBox.ItemHeight = 20;
-            this.listBox.Location = new System.Drawing.Point(51, 94);
+            this.listBox.Location = new System.Drawing.Point(54, 168);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(323, 84);
+            this.listBox.Size = new System.Drawing.Size(319, 84);
             this.listBox.TabIndex = 3;
             // 
             // btnViewData
             // 
             this.btnViewData.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btnViewData.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewData.Location = new System.Drawing.Point(164, 211);
+            this.btnViewData.Location = new System.Drawing.Point(173, 280);
             this.btnViewData.Name = "btnViewData";
             this.btnViewData.Size = new System.Drawing.Size(94, 40);
             this.btnViewData.TabIndex = 4;
@@ -62,7 +66,7 @@ namespace ContactTracingViewer
             this.labelTitle1.AutoSize = true;
             this.labelTitle1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelTitle1.Location = new System.Drawing.Point(97, 22);
+            this.labelTitle1.Location = new System.Drawing.Point(99, 22);
             this.labelTitle1.Name = "labelTitle1";
             this.labelTitle1.Size = new System.Drawing.Size(223, 24);
             this.labelTitle1.TabIndex = 5;
@@ -73,18 +77,66 @@ namespace ContactTracingViewer
             this.labelTitle2.AutoSize = true;
             this.labelTitle2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelTitle2.Location = new System.Drawing.Point(145, 51);
+            this.labelTitle2.Location = new System.Drawing.Point(147, 51);
             this.labelTitle2.Name = "labelTitle2";
             this.labelTitle2.Size = new System.Drawing.Size(137, 24);
             this.labelTitle2.TabIndex = 5;
             this.labelTitle2.Text = "Data Viewer";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(54, 149);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Select a name:";
+            // 
+            // txtBxSearch
+            // 
+            this.txtBxSearch.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBxSearch.Location = new System.Drawing.Point(54, 126);
+            this.txtBxSearch.Name = "txtBxSearch";
+            this.txtBxSearch.Size = new System.Drawing.Size(228, 21);
+            this.txtBxSearch.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(54, 105);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 17);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Search name:";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(298, 124);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(425, 298);
+            this.ClientSize = new System.Drawing.Size(435, 361);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtBxSearch);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTitle2);
             this.Controls.Add(this.labelTitle1);
             this.Controls.Add(this.btnViewData);
@@ -103,6 +155,10 @@ namespace ContactTracingViewer
         private System.Windows.Forms.Button btnViewData;
         private System.Windows.Forms.Label labelTitle1;
         private System.Windows.Forms.Label labelTitle2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtBxSearch;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
 

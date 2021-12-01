@@ -17,7 +17,6 @@ namespace ContactTracingViewer
         {
             InitializeComponent();
         }
-        
 
         static string filePathRecords = @"C:\Users\franc\source\repos\Assign#6ContactTracer\ContactTracingApp\ContactTracingApp\Properties\Contact-Tracing-Records";
         static string[] files = Directory.GetFiles(filePathRecords);
@@ -52,6 +51,32 @@ namespace ContactTracingViewer
             }
 
             return x;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string keyWord = txtBxSearch.Text;
+            List<string> listOfNames = new List<string>();
+
+            foreach (string file in files)
+            {
+                string filename = Path.GetFileName(file);
+                filename = filename.Replace(".txt", "");
+                listOfNames.Add(filename);
+            }
+
+            String[] stringOfNames = listOfNames.ToArray();
+
+            int pos = Array.IndexOf(stringOfNames, keyWord);
+
+            if (pos > -1)
+            {
+                listBox.Text = stringOfNames[pos];
+            }
+            else
+            {
+                MessageBox.Show("Name not found", "Notification");
+            }
         }
     }
 }
