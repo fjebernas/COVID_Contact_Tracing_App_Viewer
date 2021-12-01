@@ -13,13 +13,13 @@ namespace ContactTracingViewer
 {
     public partial class Form1 : Form
     {
+        static string filePathRecords = @"C:\Users\franc\source\repos\Assign#6ContactTracer\ContactTracingApp\ContactTracingApp\Properties\Contact-Tracing-Records";
+        static string[] files = Directory.GetFiles(filePathRecords);
+
         public Form1()
         {
             InitializeComponent();
         }
-
-        static string filePathRecords = @"C:\Users\franc\source\repos\Assign#6ContactTracer\ContactTracingApp\ContactTracingApp\Properties\Contact-Tracing-Records";
-        static string[] files = Directory.GetFiles(filePathRecords);
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -31,14 +31,67 @@ namespace ContactTracingViewer
             }
         }
 
+        private void Form1_Click(object sender, EventArgs e)
+        {
+            listBox.ClearSelected();
+            listBox.Text = "";
+        }
+
         private void btnViewData_Click(object sender, EventArgs e)
         {
-            string filePath = @"C:\Users\franc\source\repos\Assign#6ContactTracer\ContactTracingApp\ContactTracingApp\Properties\Contact-Tracing-Records\" + listBox.Text + ".txt";
+            labelSearchWarning.Text = "";
+            if (listBox.Text != "")
+            {
+                string filePath = @"C:\Users\franc\source\repos\Assign#6ContactTracer\ContactTracingApp\ContactTracingApp\Properties\Contact-Tracing-Records\" + listBox.Text + ".txt";
 
-            List<string> lines = new List<string>();
-            lines = File.ReadAllLines(filePath).ToList();
+                List<string> lines = new List<string>();
+                lines = File.ReadAllLines(filePath).ToList();
 
-            MessageBox.Show(ListToString(lines), listBox.Text);
+                MessageBox.Show(ListToString(lines), listBox.Text);
+            } 
+            else
+            {
+                labelSearchWarning.Location = new Point(159, 308);
+                labelSearchWarning.Text = "Please select a name";
+            }
+            
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string keyWord = txtBxSearch.Text;
+            List<string> listOfNames = new List<string>();
+            labelSearchWarning.Text = "";
+
+            foreach (string file in files)
+            {
+                string filename = Path.GetFileName(file);
+                filename = filename.Replace(".txt", "");
+                listOfNames.Add(filename);
+            }
+
+            String[] arrayOfNames = listOfNames.ToArray();
+
+            if (keyWord.Length >= 3)
+            {
+                foreach (string x in arrayOfNames)
+                {
+                    if ((x.ToLower()).Contains(keyWord.ToLower()))
+                    {
+                        listBox.Text = x;
+                    }
+                }
+
+                if (!((listBox.Text).ToLower()).Contains(keyWord.ToLower()))
+                {
+                    MessageBox.Show("Name not found", "Notification");
+                }
+            } 
+            else
+            {
+                labelSearchWarning.Location = new Point(170, 106);
+                labelSearchWarning.Text = "Please enter atleast three characters";
+            }
         }
 
         private string ListToString(List<string> lines)
@@ -51,45 +104,6 @@ namespace ContactTracingViewer
             }
 
             return x;
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            string keyWord = txtBxSearch.Text;
-            List<string> listOfNames = new List<string>();
-            
-
-            foreach (string file in files)
-            {
-                string filename = Path.GetFileName(file);
-                filename = filename.Replace(".txt", "");
-                listOfNames.Add(filename);
-            }
-
-            String[] arrayOfNames = listOfNames.ToArray();
-
-            /*int pos = Array.IndexOf(arrayOfNames, keyWord);
-
-            if (pos > -1)
-            {
-                listBox.Text = arrayOfNames[pos];
-            }
-            else
-            {
-                MessageBox.Show("Name not found", "Notification");
-            }*/
-
-            foreach (string x in arrayOfNames)
-            {
-                if ((x.ToLower()).Contains(keyWord.ToLower())) {
-                    listBox.Text = x;
-                }
-            }
-
-            if (!((listBox.Text).ToLower()).Contains(keyWord.ToLower()))
-            {
-                MessageBox.Show("Name not found", "Notification");
-            }
         }
     }
 }

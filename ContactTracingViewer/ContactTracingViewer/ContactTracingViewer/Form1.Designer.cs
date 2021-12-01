@@ -37,23 +37,24 @@ namespace ContactTracingViewer
             this.txtBxSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.labelSearchWarning = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBox
             // 
-            this.listBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox.FormattingEnabled = true;
-            this.listBox.ItemHeight = 20;
+            this.listBox.ItemHeight = 18;
             this.listBox.Location = new System.Drawing.Point(54, 168);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(319, 84);
+            this.listBox.Size = new System.Drawing.Size(319, 130);
             this.listBox.TabIndex = 3;
             // 
             // btnViewData
             // 
             this.btnViewData.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btnViewData.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewData.Location = new System.Drawing.Point(173, 280);
+            this.btnViewData.Location = new System.Drawing.Point(173, 327);
             this.btnViewData.Name = "btnViewData";
             this.btnViewData.Size = new System.Drawing.Size(94, 40);
             this.btnViewData.TabIndex = 4;
@@ -127,14 +128,26 @@ namespace ContactTracingViewer
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // labelSearchWarning
+            // 
+            this.labelSearchWarning.AutoSize = true;
+            this.labelSearchWarning.BackColor = System.Drawing.Color.Transparent;
+            this.labelSearchWarning.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearchWarning.ForeColor = System.Drawing.Color.Maroon;
+            this.labelSearchWarning.Location = new System.Drawing.Point(22, 22);
+            this.labelSearchWarning.Name = "labelSearchWarning";
+            this.labelSearchWarning.Size = new System.Drawing.Size(0, 16);
+            this.labelSearchWarning.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(435, 361);
+            this.ClientSize = new System.Drawing.Size(435, 405);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtBxSearch);
+            this.Controls.Add(this.labelSearchWarning);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTitle2);
@@ -145,6 +158,7 @@ namespace ContactTracingViewer
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contact Tracing App Data Viewer";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Click += new System.EventHandler(this.Form1_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,6 +173,7 @@ namespace ContactTracingViewer
         private System.Windows.Forms.TextBox txtBxSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label labelSearchWarning;
     }
 }
 
